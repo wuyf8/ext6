@@ -6,7 +6,7 @@ Ext.onReady(function(){
             title:'Container panel',
             items:[{
                 xtype:'panel',
-                title:'child panel 3',
+                title:'child panel 1',
                 height:100,
                 width:'75%'
             },{
