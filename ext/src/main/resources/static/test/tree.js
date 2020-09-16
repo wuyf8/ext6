@@ -44,7 +44,7 @@ Ext.onReady(function () {
               {
                   xtype:'gridpanel',
                   bbar:[{
-                      text:'按钮'
+                      text:'按钮11111111111111'
                   }]
               }
           ]
