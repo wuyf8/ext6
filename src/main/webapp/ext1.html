@@ -2,38 +2,61 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
-    <script  type="text/javascript"  src="ext/locale-zh_CN.js" charset="UTF-8"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css"
+          rel="stylesheet"/>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+    <script type="text/javascript" src="ext/locale-zh_CN.js"
+            charset="UTF-8"></script>
     <script type="text/javascript">
-        Ext.onReady(function() {
-    Ext.QuickTips.init();
-    var form=new Ext.form.Panel({
-        title:'表单',
-        bodyStyle:'padding:5;margin:5',
-        height:120,
-        width: 300,
-        frame:true,
-        renderTo:'p1',
-        defaultType:'textfield',
-        defaults:{
-        labelSeparator:':',
-            labelWidth:100,
-            width:250,
-            allowBlank:false,
-            blankText:'不允许为空',
-            labelAlign:'left',
-            msgTarget:'qtip'
-        },
-        items:[{
+        Ext.onReady(function () {
+            // Ext.QuickTips.init();
+            var tree = Ext.create('Ext.tree.Panel', {
+                title: 'title',
+                width: 300,
+                height: 200,
+                renderTo: Ext.getBody(),
+                fileds: ['name', 'description'],
+                columns: [{
+                    xtype: 'treecolumn',
+                    text:'名称',
+                    dataIndex:'name',
+                    width:100,
+                    sortable:true
+                },{
+                    text:'描述',
+                    dataIndex:'description',
+                    // flex:1,
+                    sortable:true
+                }],
+                root: {
+                    name: '树根',
+                    description:'舒更的描述',
+                    expanded: true,
+                    children: [{
+                        name: '节点一',
+                        expanded: true,
+                        description:'节点一的描述',
+                        children: [{
+                            description:'节点三的描述',
+                            name: '节点三',
+                            leaf: true,
+                        }]
+                    }, {
+                        description:'节点二的描述',
+                        name: '节点二',
+                        checked:true,
+                        leaf: true
+                    }]
+                }
+            })
 
-        }]
-    })
+
         });
     </script>
 </head>
 <body>
 
-<div id = "p1"></div>
+<div id="p1"></div>
 </body>
 </html>

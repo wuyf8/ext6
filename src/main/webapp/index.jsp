@@ -8,7 +8,7 @@
             charset="UTF-8"></script>
 
 	<script  type="text/javascript"  src="ext/ext-lang-zh_CN.js"  charset="UTF-8"></script>
-	<script src="test.js" type="text/javascript" charset="UTF-8" ></script>
+	<script src="Test.js" type="text/javascript" charset="UTF-8" ></script>
 </head>
 <body>
 <p> Click the button for alert box </p>
